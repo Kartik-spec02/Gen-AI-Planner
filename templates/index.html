@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GenAI Event Planner</title>
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css"/>
+</head>
+<body>
+  <!-- Animated Gradient Blobs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <main>
+    <header>
+      <div class="badge">✨ Powered by Gemini AI</div>
+      <h1>Plan the <span class="italic">perfect</span> event.</h1>
+      <p class="sub">Tailored budgets, timelines & magical ideas for weddings, birthdays, and community events.</p>
+    </header>
+
+    <form id="briefForm" class="planner-card">
+      <div class="grid">
+        <label>Event type
+          <select name="event_type">
+            <option value="wedding">💍 Wedding</option>
+            <option value="birthday">🎂 Birthday</option>
+            <option value="community">🎪 Community Event</option>
+          </select>
+        </label>
+        <label>Theme <input name="theme" placeholder="e.g. Cyberpunk Neon Rave" value="Cyberpunk neon rave"/></label>
+        <label>Budget (USD) <input name="budget" type="number" min="100" value="20000" required/></label>
+        <label>Guests <input name="guests" type="number" min="1" value="80" required/></label>
+        <label>Date <input name="date" type="date"/></label>
+        <label>Location <input name="location" placeholder="City, venue..."/></label>
+      </div>
+      <label>Notes / Vibe <textarea name="notes" rows="2" placeholder="Must-haves, dietary constraints, specific vibes..."></textarea></label>
+      
+      <button type="submit" id="generateBtn">
+        <span class="btn-text">Generate Plan ✨</span>
+        <span id="status" class="status-text"></span>
+      </button>
+    </form>
+
+    <section id="result" class="planner-card" hidden></section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
